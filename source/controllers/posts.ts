@@ -3,14 +3,14 @@ import { Request, Response, NextFunction } from 'express';
 import axios, { AxiosResponse } from 'axios';
 
 interface Post {
-    title: String;
+    sender: String;
     body: String;
 }
 
 let postsCollection: [Post] = [
     {
-        title: "Hello",
-        body: 'I am a message'
+        sender: 'Ramón',
+        body: 'You rule!'
     }
 ]
 
@@ -18,18 +18,16 @@ let postsCollection: [Post] = [
 const getPosts = (req: Request, res: Response, next: NextFunction) => {
     // get some posts
     let posts: [Post] = postsCollection;
-    return res.status(200).json({
-        message: posts
-    });
+    return res.status(200).json(posts);
 };
 
 // adding a post
 const addPost = async (req: Request, res: Response, next: NextFunction) => {
     // get the data from req.body
-    let title: string = req.body.title;
+    let sender: string = req.body.sender;
     let body: string = req.body.body;
     let newPost: Post = {
-        title: title,
+        sender: sender,
         body: body
     };
     postsCollection.push(newPost);
@@ -39,4 +37,4 @@ const addPost = async (req: Request, res: Response, next: NextFunction) => {
     });
 };
 
-export default { getPosts, getPost, updatePost, deletePost, addPost };
+export default { getPosts, addPost };
