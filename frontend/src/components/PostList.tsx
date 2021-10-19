@@ -6,7 +6,7 @@ interface Post {
     body: String;
 }
 
-function PeopleList() {
+function PostList() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   async function fetchPosts() {
@@ -28,4 +28,4 @@ function PeopleList() {
   return <ul>{rows}</ul>;
 }
 
-export default PeopleList;
+export default PostList;
