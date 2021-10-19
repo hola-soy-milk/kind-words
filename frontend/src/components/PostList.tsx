@@ -1,27 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
 
 interface Post {
     sender: String;
     body: String;
 }
 
-function PostList() {
-  const [posts, setPosts] = useState<Post[]>([]);
+interface Props {
+  posts: Post[]
+}
 
-  async function fetchPosts() {
-    const res = await axios.get<Post[]>("http://localhost:6060/posts");
-    if (res.status === 200) {
-      let data: Post[] = res.data;
-      setPosts(data);
-    }
-  }
+function PostList(props: Props) {
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  let rows = posts.map((post, index) => {
+  let rows = props.posts.map((post, index) => {
     return <li key={index}>{post.sender}</li>;
   });
 

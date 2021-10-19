@@ -6,8 +6,12 @@ interface Post {
   body: String;
 }
 
-function PostForm() {
-  async function postPost(e: React.SyntheticEvent) {
+interface Props {
+    submitPost(post: Post): any
+}
+
+function PostForm(props: Props) {
+  function postPost(e: React.SyntheticEvent) {
     e.preventDefault();
     const target = e.target as typeof e.target & {
       sender: { value: string };
@@ -17,7 +21,7 @@ function PostForm() {
         sender: target.sender.value,
         body: target.body.value
     };
-    await axios.post<Post>("http://localhost:6060/posts", post);
+    props.submitPost(post);
   }
 
   return (
