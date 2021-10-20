@@ -1,7 +1,12 @@
 import React from 'react';
 
+interface Sender {
+    name: String;
+    handle: String;
+}
+
 interface Post {
-    sender: String;
+    sender: Sender;
     body: String;
 }
 
@@ -12,10 +17,14 @@ interface Props {
 function PostList(props: Props) {
 
   let rows = props.posts.map((post, index) => {
-    return <li key={index}>{post.sender}</li>;
+    return <tr key={index}>
+      <td>{post.sender.name}</td>
+      <td>{post.sender.handle}</td>
+      <td>{post.body}</td>
+    </tr>;
   });
 
-  return <ul>{rows}</ul>;
+  return <table>{rows}</table>;
 }
 
 export default PostList;

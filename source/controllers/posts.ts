@@ -2,14 +2,22 @@
 import { Request, Response, NextFunction } from 'express';
 import axios, { AxiosResponse } from 'axios';
 
+interface Sender {
+    name: String;
+    handle: String;
+}
+
 interface Post {
-    sender: String;
+    sender: Sender;
     body: String;
 }
 
 let postsCollection: [Post] = [
     {
-        sender: 'Ramón',
+        sender: {
+            name: 'Ramon',
+            handle: 'hola_soy_milk'
+        },
         body: 'You rule!'
     }
 ]
@@ -24,10 +32,14 @@ const getPosts = (req: Request, res: Response, next: NextFunction) => {
 // adding a post
 const addPost = async (req: Request, res: Response, next: NextFunction) => {
     // get the data from req.body
-    let sender: string = req.body.sender;
+    let name: string = req.body.sender.name;
+    let handle: string = req.body.sender.handle;
     let body: string = req.body.body;
     let newPost: Post = {
-        sender: sender,
+        sender: {
+            name: name,
+            handle: handle
+        },
         body: body
     };
     postsCollection.push(newPost);

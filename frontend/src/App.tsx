@@ -5,8 +5,13 @@ import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
 
+interface Sender {
+    name: String;
+    handle: String;
+}
+
 interface Post {
-    sender: String;
+    sender: Sender;
     body: String;
 }
 
@@ -32,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Kind Words</h1>
       <PostForm submitPost={submitPost}/>
       <PostList posts={posts}/>
     </div>
