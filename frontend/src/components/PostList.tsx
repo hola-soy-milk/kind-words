@@ -1,14 +1,5 @@
 import React from 'react';
-
-interface Sender {
-    name: String;
-    handle: String;
-}
-
-interface Post {
-    sender: Sender;
-    body: String;
-}
+import Post from '../models/Post'
 
 interface Props {
   posts: Post[]

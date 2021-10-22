@@ -4,16 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
-
-interface Sender {
-    name: String;
-    handle: String;
-}
-
-interface Post {
-    sender: Sender;
-    body: String;
-}
+import Post from './models/Post'
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);

@@ -1,15 +1,5 @@
 import React from "react";
-import axios from "axios";
-
-interface Sender {
-    name: String;
-    handle: String;
-}
-
-interface Post {
-    sender: Sender;
-    body: String;
-}
+import Post from '../models/Post'
 
 interface Props {
     submitPost(post: Post): any
