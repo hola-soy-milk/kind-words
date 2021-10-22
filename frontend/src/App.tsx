@@ -1,24 +1,20 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
 import Post from './models/Post'
+import {getPosts, postPost} from './utils/Api'
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   async function fetchPosts() {
-    const res = await axios.get<Post[]>("http://localhost:6060/posts");
-    if (res.status === 200) {
-      let data: Post[] = res.data;
-      setPosts(data);
-    }
+    setPosts(await getPosts());
   }
 
   async function submitPost(post: Post) {
-    await axios.post<Post>("http://localhost:6060/posts", post);
+    await postPost(post);
     fetchPosts();
   }
 
