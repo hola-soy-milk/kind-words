@@ -24,19 +24,21 @@ function PostForm(props: Props) {
   }
 
   return (
-    <form onSubmit={postPost}>
+    <form id="post-form" onSubmit={postPost}>
+      <div className="rows">
       <label>
-        Sender name
+        <span>Sender name</span>
         <input type="text" name="sender" id="sender" />
       </label>
       <label>
-        Sender handle
+        <span>Sender handle</span>
         <input type="text" name="handle" id="handle" />
       </label>
       <label>
-        Words
+        <span>Words</span>
       <input type="text" name="body" id="body" />
       </label>
+      </div>
       <input type="submit" />
     </form>
   );

@@ -25,8 +25,10 @@ function App() {
   return (
     <div className="App">
       <h1>Kind Words</h1>
-      <PostForm submitPost={submitPost}/>
-      <PostList posts={posts}/>
+      <main>
+        <PostList posts={posts}/>
+        <PostForm submitPost={submitPost}/>
+      </main>
     </div>
   );
 }

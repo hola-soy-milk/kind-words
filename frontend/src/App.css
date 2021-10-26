@@ -1,5 +1,88 @@
+@font-face {
+  font-family: "Pacifico";
+  src: url("static/Pacifico/Pacifico-Regular.ttf");
+  font-display: swap;
+}
+
+h1 {
+  font-family: Pacifico, serif;
+}
+
+html {
+  background-color: #f1f1f1;
+}
+
+@media (min-width: 768px) {
+  main {
+    display:flex;
+    justify-content: space-around;
+    gap: 10%;
+  }
+  #post-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 3rem;
+  row-gap: 3rem;
+  }
+}
+
+form .rows { 
+  display: table; 
+  border-spacing:1rem;
+  border-collapse: separate; 
+}
+
+.card {
+  background-color: #fff;
+  padding-top:1rem;
+  padding-left:3rem;
+  padding-right:3rem;
+  padding-bottom:1rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 3rem;
+  margin-bottom: 3rem;
+  border: black 0.5rem solid;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  text-align: left;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+.muted {
+  color: #666666;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin-bottom: 0;
+  }
+}
+label { display: table-row; }
+label span { display: table-cell; text-align: left; }
+input { display: table-row; text-align: right;}
+
 .App {
   text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
 }
 
 .App-logo {

@@ -8,14 +8,14 @@ interface Props {
 function PostList(props: Props) {
 
   let rows = props.posts.map((post, index) => {
-    return <tr key={index}>
-      <td>{post.sender.name}</td>
-      <td>{post.sender.handle}</td>
-      <td>{post.body}</td>
-    </tr>;
+    return <div className="card" key={index}>
+      <p className="small">{ post.sender.name } <span className="muted">@{post.sender.handle}</span></p>
+      <p className="">{ post.body }</p>
+      <p className="small right">Jan. 25th 2021</p>
+    </div>;
   });
 
-  return <table>{rows}</table>;
+  return <div id="post-list">{rows}</div>;
 }
 
 export default PostList;
