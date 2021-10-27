@@ -87,7 +87,7 @@ form .rows {
 }
 label { display: table-row; }
 label span { display: table-cell; text-align: left; color: var(--text) }
-input { display: table-row; text-align: right;}
+input { display: table-row;}
 
 .App {
   text-align: center;

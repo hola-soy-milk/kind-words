@@ -28,11 +28,11 @@ function PostForm(props: Props) {
     <form id="post-form" onSubmit={postPost}>
       <div className="rows">
       <label>
-        <span>Sender name</span>
+        <span>Name</span>
         <input type="text" name="sender" id="sender" />
       </label>
       <label>
-        <span>Sender handle</span>
+        <span>Handle</span>
         <input type="text" name="handle" id="handle" />
       </label>
       <label>
@@ -40,7 +40,7 @@ function PostForm(props: Props) {
       <input type="text" name="body" id="body" />
       </label>
       </div>
-      <input type="submit" />
+      <input type="submit" value="Send"/>
     </form>
   );
 }
