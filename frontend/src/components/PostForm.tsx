@@ -18,7 +18,8 @@ function PostForm(props: Props) {
           name: target.sender.value,
           handle: target.handle.value,
         },
-        body: target.body.value
+        body: target.body.value,
+        timestamp: new Date().getTime()
     };
     props.submitPost(post);
   }

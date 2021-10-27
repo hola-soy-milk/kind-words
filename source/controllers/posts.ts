@@ -1,15 +1,15 @@
 /** source/controllers/posts.ts */
 import { Request, Response, NextFunction } from 'express';
-import axios, { AxiosResponse } from 'axios';
 
 interface Sender {
-    name: String;
-    handle: String;
+    name: string;
+    handle: string;
 }
 
 interface Post {
     sender: Sender;
-    body: String;
+    body: string;
+    timestamp: number;
 }
 
 let postsCollection: [Post] = [
@@ -18,7 +18,8 @@ let postsCollection: [Post] = [
             name: 'Ramon',
             handle: 'hola_soy_milk'
         },
-        body: 'You rule!'
+        body: 'You rule!',
+        timestamp: new Date().getTime()
     }
 ]
 
@@ -35,12 +36,14 @@ const addPost = async (req: Request, res: Response, next: NextFunction) => {
     let name: string = req.body.sender.name;
     let handle: string = req.body.sender.handle;
     let body: string = req.body.body;
+    let timestamp: number = req.body.timestamp;
     let newPost: Post = {
         sender: {
             name: name,
             handle: handle
         },
-        body: body
+        body: body,
+        timestamp: timestamp
     };
     postsCollection.push(newPost);
     // return response
