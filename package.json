@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "main": "source/server.ts",
   "scripts": {
+    "dev": "concurrently \"nodemon source/server.ts\" \"cd frontend && react-scripts start\"",
     "start": "concurrently \"nodemon source/server.ts\" \"cd frontend && react-scripts start\"",
     "build": "rm -rf build/ && prettier --write source/ && tsc"
   },
