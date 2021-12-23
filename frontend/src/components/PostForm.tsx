@@ -28,15 +28,15 @@ function PostForm(props: Props) {
     <form id="post-form" onSubmit={postPost}>
       <div className="rows">
       <label>
-        <span>Name</span>
+        <span>Nombre</span>
         <input type="text" name="sender" id="sender" />
       </label>
       <label>
-        <span>Handle</span>
+        <span>Usuario</span>
         <input type="text" name="handle" id="handle" />
       </label>
       <label>
-        <span>Words</span>
+        <span>Palabras</span>
       <input type="text" name="body" id="body" />
       </label>
       </div>

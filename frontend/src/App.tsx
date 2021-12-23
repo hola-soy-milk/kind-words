@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Kind Words</h1>
+      <h1>Palabras Amables</h1>
       <main>
         <PostList posts={posts}/>
         <PostForm submitPost={submitPost}/>
