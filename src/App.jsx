@@ -3,23 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
-import Post from './models/Post'
-import {getPosts, postPost} from './utils/Api'
 
 function App() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState([]);
 
   async function fetchPosts() {
     setPosts(await getPosts());
   }
 
-  async function submitPost(post: Post) {
-    await postPost(post);
-    fetchPosts();
+  async function submitPost(post) {
+    setPosts([...posts, post]);
   }
 
   useEffect(() => {
-    fetchPosts();
+    setPosts([{
+      sender: {
+        name: "Ramón",
+        handle: "hola_soy_milk",
+      },
+      body: "Eres genial!",
+      timestamp: new Date,
+    }]);
   }, []);
 
   return (

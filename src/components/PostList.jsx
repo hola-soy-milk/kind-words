@@ -1,11 +1,6 @@
 import React from 'react';
-import Post from '../models/Post'
 
-interface Props {
-  posts: Post[]
-}
-
-function PostList(props: Props) {
+function PostList(props) {
 
   let rows = props.posts.map((post, index) => {
     return <div className="card" key={index}>
