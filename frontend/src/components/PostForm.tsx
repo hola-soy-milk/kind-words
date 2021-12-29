@@ -40,7 +40,7 @@ function PostForm(props: Props) {
       <input type="text" name="body" id="body" />
       </label>
       </div>
-      <input type="submit" value="Send"/>
+      <input type="submit" value="Enviar"/>
     </form>
   );
 }

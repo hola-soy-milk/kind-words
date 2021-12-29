@@ -1,7 +1,7 @@
 :root {
-  --background: #F0E5CF;
-  --card-background: #F0D9FF;
-  --card-shadow: #BFA2DB;
+  --background: #f0e5cf;
+  --card-background: #f0d9ff;
+  --card-shadow: #bfa2db;
   --text: #3f3e41;
 }
 
@@ -9,6 +9,24 @@
   font-family: "Pacifico";
   src: url("static/Pacifico/Pacifico-Regular.ttf");
   font-display: swap;
+}
+
+form input[type="text"] {
+  border-radius: 1em;
+  padding: 0.5em 0.75em;
+  background-color: var(--card-background);
+  border-color: var(--card-shadow);
+  border-style: solid;
+}
+
+form input[type="submit"] {
+  background-color: var(--card-background);
+  border-color: var(--card-shadow);
+  border-style: solid;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  font-size: 1.25em;
+  margin-left: 15px;
 }
 
 h1 {
@@ -26,7 +44,7 @@ html {
 
 @media (min-width: 768px) {
   main {
-    display:flex;
+    display: flex;
     justify-content: space-around;
     gap: 10%;
   }
@@ -34,24 +52,28 @@ html {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 3rem;
-  row-gap: 3rem;
+    column-gap: 3rem;
+    row-gap: 3rem;
   }
 }
 
-form .rows { 
-  display: table; 
-  border-spacing:1rem;
-  border-collapse: separate; 
+form .rows {
+  display: table;
+  border-spacing: 1rem;
+  border-collapse: separate;
+}
+
+form {
+  text-align: left;
 }
 
 .card {
   background-color: var(--card-background);
-  padding-top:1rem;
-  padding-left:3rem;
-  padding-right:3rem;
-  padding-bottom:1rem;
-  display:flex;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 3rem;
@@ -69,9 +91,6 @@ form .rows {
   font-size: 0.8rem;
 }
 
-.muted {
-}
-
 .center {
   text-align: center;
 }
@@ -85,9 +104,17 @@ form .rows {
     margin-bottom: 0;
   }
 }
-label { display: table-row; }
-label span { display: table-cell; text-align: left; color: var(--text) }
-input { display: table-row;}
+label {
+  display: table-row;
+}
+label span {
+  display: table-cell;
+  text-align: left;
+  color: var(--text);
+}
+input {
+  display: table-row;
+}
 
 .App {
   text-align: center;
