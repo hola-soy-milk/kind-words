@@ -7,10 +7,6 @@ import PostForm from './components/PostForm';
 function App() {
   const [posts, setPosts] = useState([]);
 
-  async function fetchPosts() {
-    setPosts(await getPosts());
-  }
-
   async function submitPost(post) {
     setPosts([...posts, post]);
   }
