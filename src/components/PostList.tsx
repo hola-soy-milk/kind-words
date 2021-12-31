@@ -1,8 +1,9 @@
 import React from 'react';
+import Post from '../models/Post';
 
 function PostList(props) {
 
-  let rows = props.posts.map((post, index) => {
+  let rows = props.posts.map((post: Post, index: number) => {
     return <div className="card" key={index}>
       <p className="small">{ post.name } <span className="muted">@{post.handle}</span></p>
       <p className="">{ post.body }</p>

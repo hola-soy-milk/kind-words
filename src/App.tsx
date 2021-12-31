@@ -8,7 +8,7 @@ import Post from './models/Post';
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
 
-  async function submitPost(post) {
+  async function submitPost(post: Post) {
     setPosts([...posts, post]);
   }
 
