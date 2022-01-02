@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
@@ -15,8 +14,11 @@ function App() {
   useEffect(() => {
     setPosts([{
       id: posts.length + 1,
-      name: "Ramón",
-      handle: "hola_soy_milk",
+      sender: {
+        id: posts.length + 1,
+        name: "Ramón",
+        handle: "hola_soy_milk",
+      },
       body: "Eres genial!",
       timestamp: new Date,
     }]);

@@ -1,7 +1,8 @@
+import Sender from "./Sender";
+
 export default interface Post {
   id: number;
-  name: string;
-  handle: string;
+  sender: Sender;
   body: string;
   timestamp: Date;
 }

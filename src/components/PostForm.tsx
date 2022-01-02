@@ -6,8 +6,11 @@ function PostForm(props) {
     let formData = new FormData(document.querySelector("#post-form"));
     let post = {
         id: props.newPostId,
-        name: formData.get("sender"),
-        handle: formData.get("handle"),
+        sender: {
+          id: props.newPostId,
+          name: formData.get("sender"),
+          handle: formData.get("handle"),
+        },
         body: formData.get("body"),
         timestamp: new Date().getTime()
     };

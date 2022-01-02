@@ -11,7 +11,7 @@ function PostList(props: Props) {
 
   let rows = posts.map((post, index) => {
     return <div className="card" key={index}>
-      <p className="small">{ post.name } <span className="muted">@{post.handle}</span></p>
+      <p className="small">{ post.sender.name } <span className="muted">@{post.sender.handle}</span></p>
       <p className="">{ post.body }</p>
       <p className="small right">{formatPostTimestamp(post)}</p>
     </div>;
