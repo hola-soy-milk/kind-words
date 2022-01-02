@@ -1,7 +1,7 @@
 import axios from "axios";
 import Post from "../models/Post";
 
-export async function getPosts(): Promise<Post[]> {
+export async function getPosts() {
   const res = await axios.get<Post[]>("http://localhost:6060/posts");
   if (res.status === 200) {
     return res.data;

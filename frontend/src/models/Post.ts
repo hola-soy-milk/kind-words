@@ -1,6 +1,8 @@
-import Sender from './Sender'
+import Sender from "./Sender";
+
 export default interface Post {
-    sender: Sender,
-    body: string,
-    timestamp: number
+  id: number;
+  sender: Sender;
+  body: string;
+  timestamp: Date;
 }

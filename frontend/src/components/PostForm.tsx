@@ -1,24 +1,17 @@
 import React from "react";
-import Post from '../models/Post'
 
-interface Props {
-    submitPost(post: Post): any
-}
-
-function PostForm(props: Props) {
-  function postPost(e: React.SyntheticEvent) {
+function PostForm(props) {
+  function postPost(e) {
     e.preventDefault();
-    const target = e.target as typeof e.target & {
-      sender: { value: string };
-      handle: { value: string };
-      body: { value: string };
-    };
-    let post : Post = {
+    let formData = new FormData(document.querySelector("#post-form"));
+    let post = {
+        id: props.newPostId,
         sender: {
-          name: target.sender.value,
-          handle: target.handle.value,
+          id: props.newPostId,
+          name: formData.get("sender"),
+          handle: formData.get("handle"),
         },
-        body: target.body.value,
+        body: formData.get("body"),
         timestamp: new Date().getTime()
     };
     props.submitPost(post);
