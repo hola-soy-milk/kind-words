@@ -3,13 +3,23 @@ import './App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
 import Post from './models/Post';
+import { getPosts, postPost } from './utils/api';
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
 
-  async function submitPost(post) {
-    setPosts([...posts, post]);
+  async function fetchPosts() {
+    setPosts(await getPosts());
   }
+
+  async function submitPost(post: Post) {
+    await postPost(post);
+    fetchPosts();
+  }
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   useEffect(() => {
     setPosts([{
