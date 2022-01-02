@@ -1,12 +1,19 @@
 import React from 'react';
+import Post from '../models/Post';
+import {formatPostTimestamp} from '../utils/formatters'
 
-function PostList(props) {
+interface Props {
+  posts: Post[]
+}
 
-  let rows = props.posts.map((post, index) => {
+function PostList(props: Props) {
+  let {posts} = props;
+
+  let rows = posts.map((post, index) => {
     return <div className="card" key={index}>
       <p className="small">{ post.name } <span className="muted">@{post.handle}</span></p>
       <p className="">{ post.body }</p>
-      <p className="small right">{new Date(post.timestamp).toLocaleString('en-GB')}</p>
+      <p className="small right">{formatPostTimestamp(post)}</p>
     </div>;
   });
 
